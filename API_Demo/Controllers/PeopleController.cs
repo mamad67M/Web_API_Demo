@@ -34,14 +34,15 @@ namespace API_Demo.Controllers
         }
 
         // POST: api/People
-        public void Post([FromBody]string value)
+        public void Post(Person p)
         {
+            People.Add(p);
         }
 
-        // PUT: api/People/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        //// PUT: api/People/5
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
 
         // DELETE: api/People/5
         public void Delete(int id)
