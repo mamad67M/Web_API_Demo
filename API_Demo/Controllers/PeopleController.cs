@@ -19,7 +19,11 @@ namespace API_Demo.Controllers
             People.Add(new Person(3, "Baldé", "Sekou"));
             People.Add(new Person(4, "mamadou", "Calista"));
         }
-
+        /// <summary>
+        /// Une methode nous permettant de handle les prenoms
+        /// Ensuite la customisation de la route pour l'appeler
+        /// </summary>
+        /// <returns>les prenoms</returns>
         [Route("api/People/GetPrenom")]
         //[HttpGet]
        public List<string> GetPrenom()
