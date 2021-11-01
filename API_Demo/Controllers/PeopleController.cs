@@ -14,12 +14,27 @@ namespace API_Demo.Controllers
 
         public PeopleController()
         {
-            People.Add(new Person(1, "mamadou", "diallo"));
-            People.Add(new Person(2, "Yanis", "diallo"));
+            People.Add(new Person(1, "mamadou", "Yanis"));
+            People.Add(new Person(2, "Yanis", "Mamadou"));
             People.Add(new Person(3, "Baldé", "Sekou"));
-            People.Add(new Person(4, "mamadou", "Barry"));
+            People.Add(new Person(4, "mamadou", "Calista"));
         }
-       
+
+        [Route("api/People/GetPrenom")]
+        //[HttpGet]
+       public List<string> GetPrenom()
+        {
+            List<string> prenoms = new List<string>();
+
+            foreach (var item in People)
+            {
+                prenoms.Add(item.prenom);
+            }
+            return prenoms;
+        }
+
+
+
         // GET: api/People
         public List<Person> Get()
         {
